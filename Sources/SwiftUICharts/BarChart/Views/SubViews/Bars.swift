@@ -530,8 +530,8 @@ internal struct HorizontalColourBar<CD: CTBarChartDataProtocol & GetDataProtocol
         return max(cornerRadius.topLeft, cornerRadius.bottomLeft) + max(cornerRadius.topRight, cornerRadius.bottomRight)
     }
     
-    private func getScaleRatio(value: CGFloat) -> CGFloat {
-        divideByZeroProtection(CGFloat.self, value, chartData.maxValue)
+    private func getScaleRatio(value: Double) -> CGFloat {
+        CGFloat(divideByZeroProtection(Double.self, value, chartData.maxValue))
     }
 }
 
